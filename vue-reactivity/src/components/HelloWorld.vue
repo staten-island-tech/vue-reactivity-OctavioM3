@@ -5,7 +5,7 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, transformVNodeArgs } from 'vue'
 
 const count = ref(0)
 //This adds a counter
@@ -14,6 +14,16 @@ function increment(){
 }
 
 const text = ref('')
+
+let id = 0
+function addTodo(){
+  todos.value.push({ id: id++, text: newTodo.value })
+  newTodo.value = ''
+}
+
+function removeTodo(todo) {
+  todos.value = todos.value.filter((t) => t !== todo)
+}
 
 </script>
 
