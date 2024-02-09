@@ -1,9 +1,18 @@
+<template>
+  <div>
+    <HelloWorld
+    v-for="todo in todos" 
+    :key="todo.id"
+    ;Todo = "todo"
+    />
+  </div>
+</template>
+
 <script setup>
-import TheWelcome from '../components/HelloWorld.vue'
+import HelloWorld from '@/components/HelloWorld.vue';
+
 </script>
 
-<template>
-  <main>
-    <TheWelcome />
-  </main>
-</template>
+<style  scoped>
+
+</style>
