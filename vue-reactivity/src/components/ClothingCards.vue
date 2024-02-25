@@ -1,19 +1,24 @@
 <template>
   <div class="ClothesCard">
-    <h1>{{ Clothes.name }}</h1>
+    <h2>{{ Clothes.name }}</h2>
     <img :src="Clothes.img" alt="" />
-    <h2>{{ Clothes.color }}</h2>
-    <h2> ${{ Clothes.price }}</h2>
-    <button class="add" @click="addToBag">Purchase</button>
+    <p>{{ Clothes.color }}</p>
+    <p> ${{ Clothes.price }}</p>
+    <p>{{ Clothes.purchasecount }}</p>
+    <button class="add" @click="addToBag">Purchase Item</button>
   </div>
 </template>
 
 <script setup>
 import { ref } from 'vue'
-
 const props = defineProps({
   Clothes: Object,
 });
+const count = ref(props.Clothes.purchasecount);
+
+function addToBag() {
+  count.value++
+}
 </script>
 
 <style scoped>
