@@ -11,7 +11,6 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
 import ClothingCards from '@/components/ClothingCards.vue';
 import { clothes } from '@/stores/Clothing.js';
 </script>

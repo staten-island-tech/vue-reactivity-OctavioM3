@@ -1,11 +1,14 @@
 <template>
     <button class="prev" @click="prevcard">Previous Card</button>
     <div class="Cards">
-        <h2>{{ cardArray[cardIndex].name }}</h2>
-        <p>{{ cardArray[cardIndex].purchasecount.toLocaleString() }}</p>
-        <p>Total Amount: ${{ (cardArray[cardIndex].purchasecount * cardArray[cardIndex].price).toLocaleString() }}</p>
+        <h2>{{ CardsArray[CardNumber].name }}</h2>
+        <p>{{ CardsArray[CardNumber].purchasecount.toLocaleString() }}</p>
+        <p>Total Amount: ${{ (CardsArray[CardNumber].purchasecount * CardsArray[CardNumber].price).toLocaleString() }}</p>
     </div>
     <button class="next" @click="nextcard">Next Card</button>
+    <div>
+      <button class="confirm" @click="confirmpurchase">Confirm Purchase</button>
+    </div>
 </template>
 
 <script setup>
@@ -17,23 +20,26 @@ const props = defineProps({
   Clothes: Object,
 });
 
-const cardArray = ref([...clothes]);
-cardArray.value.sort((a, b) => b.purchasecount - a.purchasecount);
-console.log(cardArray);
-const cardIndex = ref(0);
+const CardsArray = ref([...clothes]);
+CardsArray.value.sort((a, b) => b.purchasecount - a.purchasecount);
+const CardNumber = ref(0);
 
 function prevcard() {
-  cardIndex.value += -1;
-  if (cardIndex.value < 0) {
-        cardIndex.value = cardArray.value.length - 1;
+  CardNumber.value += -1;
+  if (CardNumber.value < 0) {
+        CardNumber.value = CardsArray.value.length - 1;
     }
   }
 
 function nextcard() {
-  cardIndex.value ++
-  if (cardIndex.value > cardArray.value.length - 1) {
-        cardIndex.value = 0;
+  CardNumber.value ++
+  if (CardNumber.value > CardsArray.value.length - 1) {
+        CardNumber.value = 0;
     }
+}
+
+function confirmpurchase() {
+
 }
 
 </script>
@@ -51,7 +57,19 @@ function nextcard() {
   width: 30%;
   height: 100%;
   color: blanchedalmond;
-  background-color: color;
+  background-color: black;
+}
+.prev {
+width: 10vh;
+margin-top: 3%;
+margin-bottom: 1%;
+}
+.next {
+  width: 10vh;
+}
+
+.confirm {
+  margin-top: 50%;
 }
 
 </style>

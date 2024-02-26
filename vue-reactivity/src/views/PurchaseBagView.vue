@@ -8,7 +8,6 @@
 
 <script setup>
 import PurchaseCards from '@/components/PurchaseCards.vue';
-import { clothes } from '@/stores/Clothing.js'
 </script>
 
 <style scoped>
@@ -17,6 +16,8 @@ import { clothes } from '@/stores/Clothing.js'
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
 }
 
 </style>

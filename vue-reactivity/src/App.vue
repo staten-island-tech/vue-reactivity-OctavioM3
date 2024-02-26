@@ -11,5 +11,7 @@ import { RouterLink, RouterView } from 'vue-router'
 </script>
 
 <style scoped>
-
+header {
+  text-align: center;
+}
 </style>
