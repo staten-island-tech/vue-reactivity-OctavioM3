@@ -1,8 +1,8 @@
 <template>
  <header>
-  <h1>The Shop</h1>
+  <h1>Casual Clothing</h1>
   </header>
-  
+
   <RouterView />
 </template>
 
@@ -12,13 +12,4 @@ import { RouterLink, RouterView } from 'vue-router'
 
 <style scoped>
 
-header {
-    display: flex;
-    place-items: center;
-    flex-wrap: wrap;
-    text-align: center;
-  }
-h1 {
-  text-align: center;
-}
 </style>

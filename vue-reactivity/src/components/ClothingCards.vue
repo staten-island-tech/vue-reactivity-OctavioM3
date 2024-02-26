@@ -27,15 +27,18 @@ function addToBag() {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  background-color: azure;
   margin-bottom: 2vh;
   justify-content: space-evenly;
   border-radius: 5%;
   width: 30%;
-  height: 180%;
+  height: 80vh;
   color: blanchedalmond;
   background-color: black;
 }
-
+img {
+  width: 60%;
+  height: 60%;
+  margin-top: 5vh;
+}
 
 </style>
