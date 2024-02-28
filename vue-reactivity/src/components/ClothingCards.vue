@@ -4,9 +4,10 @@
     <img :src="Clothes.img" alt="" />
     <p>{{ Clothes.color }}</p>
     <p> ${{ Clothes.price }}</p>
-    <p>{{ Clothes.purchasecount }}</p>
+    <p># of Items: {{ Clothes.purchasecount }}</p>
     <button class="add" @click="addToBag">Purchase Item</button>
-  </div>
+    <button class="remove" @click="removefrombag">Unpurchase Item</button>
+    </div>
 </template>
 
 <script setup>
@@ -18,6 +19,10 @@ const count = ref(props.Clothes.purchasecount);
 
 function addToBag() {
   count.value++
+}
+
+function removefrombag() {
+  count.value+= -1
 }
 </script>
 

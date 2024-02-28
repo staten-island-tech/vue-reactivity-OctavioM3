@@ -1,14 +1,11 @@
 <template>
     <button class="prev" @click="prevcard">Previous Card</button>
     <div class="Cards">
-        <h2>{{ CardsArray[CardNumber].name }}</h2>
-        <p>{{ CardsArray[CardNumber].purchasecount.toLocaleString() }}</p>
-        <p>Total Amount: ${{ (CardsArray[CardNumber].purchasecount * CardsArray[CardNumber].price).toLocaleString() }}</p>
+        <h2>{{ ClothingCardsArray[CardNumber].name }}</h2>
+        <p>{{ ClothingCardsArray[CardNumber].purchasecount.toLocaleString() }}</p>
+        <p>Total Amount: ${{ (ClothingCardsArray[CardNumber].purchasecount * ClothingCardsArray[CardNumber].price).toLocaleString() }}</p>
     </div>
     <button class="next" @click="nextcard">Next Card</button>
-    <div>
-      <button class="confirm" @click="confirmpurchase">Confirm Purchase</button>
-    </div>
 </template>
 
 <script setup>
@@ -20,26 +17,22 @@ const props = defineProps({
   Clothes: Object,
 });
 
-const CardsArray = ref([...clothes]);
-CardsArray.value.sort((a, b) => b.purchasecount - a.purchasecount);
+const ClothingCardsArray = ref([...clothes]);
+ClothingCardsArray.value.sort((a, b) => b.purchasecount - a.purchasecount);
 const CardNumber = ref(0);
 
 function prevcard() {
   CardNumber.value += -1;
   if (CardNumber.value < 0) {
-        CardNumber.value = CardsArray.value.length - 1;
+        CardNumber.value = ClothingCardsArray.value.length - 1;
     }
   }
 
 function nextcard() {
   CardNumber.value ++
-  if (CardNumber.value > CardsArray.value.length - 1) {
+  if (CardNumber.value > ClothingCardsArray.value.length - 1) {
         CardNumber.value = 0;
     }
-}
-
-function confirmpurchase() {
-
 }
 
 </script>
@@ -67,7 +60,6 @@ margin-bottom: 1%;
 .next {
   width: 10vh;
 }
-
 .confirm {
   margin-top: 50%;
 }

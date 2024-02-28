@@ -7,7 +7,7 @@
     :Clothes="clothing"
     />
   </div>
-  <h3><RouterLink :to="{ path: '/bag'}">Comfirm Purchase</RouterLink></h3>
+  <h3><RouterLink :to="{ path: '/bag'}">Go to Bag</RouterLink></h3>
 </template>
 
 <script setup>
