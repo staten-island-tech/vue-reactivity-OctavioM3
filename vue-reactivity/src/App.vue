@@ -14,7 +14,4 @@ import { RouterLink, RouterView } from 'vue-router'
 header {
   text-align: center;
 }
-template {
-  background-color: dimgrey;
-}
 </style>
