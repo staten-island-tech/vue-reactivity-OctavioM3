@@ -53,12 +53,12 @@ function nextcard() {
   background-color: black;
 }
 .prev {
-width: 10vh;
+width: 8vh;
 margin-top: 3%;
 margin-bottom: 1%;
 }
 .next {
-  width: 10vh;
+  width: 8vh;
 }
 .confirm {
   margin-top: 50%;
